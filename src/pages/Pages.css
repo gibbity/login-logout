@@ -1,7 +1,13 @@
-button {
+div {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color:palevioletred;
-    background-color: rgba(160, 219, 160, 0.42);
     text-align: center;
-    font-size: medium;
+}
+
+h1 {
+    font-size: xx-large;
+}
+
+input {
+    color:rgb(148, 60, 89);
 }

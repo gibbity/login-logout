@@ -1,4 +1,4 @@
-import './App.css';
+import './pages/Pages.css';
 import React, { useState } from "react";
 import LoginButton from "./components/LoginButton";
   

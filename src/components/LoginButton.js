@@ -1,10 +1,11 @@
 import React from "react";
 import {useNavigate } from "react-router-dom";
+import "./Button.css";
 
 const LoginButton = (props) => {
     const navigate = useNavigate();
-    const correctUsername = "user123";
-    const correctPassword = "pass456";
+    const correctUsername = "user123"; //THE CORRECT USERNAME
+    const correctPassword = "pass456"; //THE CORRECT PASSWORD
     let isVerified = false;
 
     function whenButtonPressed() {
