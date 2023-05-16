@@ -1,16 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import {useNavigate } from "react-router-dom";
 
-function LoginButton() {
-  const whenButtonPressed = () => {
-    alert("sign in successful/unsuccessful and go onto page");
-  }
+const LoginButton = (props) => {
+    const navigate = useNavigate();
+    const correctUsername = "user123";
+    const correctPassword = "pass456";
+    let isVerified = false;
 
-  return (
-    <button onClick={whenButtonPressed}>Login</button>
-  );
-}
+    function whenButtonPressed() {
+        if ((props.username == correctUsername) & (props.password == correctPassword)) {
+            isVerified = true;}
+        console.log({isVerified});
+        if (isVerified==true) {
+            navigate("/successful");
+        }
+        else {
+            navigate("/unsuccessful");
+        }
+    }
 
-//const root = ReactDOM.createRoot(document.getElementById('root'));
-//root.render(<LoginButton />);
+    return (
+        <div>
+            <button onClick={whenButtonPressed}>Login</button>
+        </div>
+        );
+    }
+
 export default LoginButton;

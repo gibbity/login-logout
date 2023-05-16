@@ -9,36 +9,16 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link,
-  Navigate
 } from 'react-router-dom';
-import handleLogin from './App'
 
 
-const Routing = () => {
+const Routing = (verified) => {
   return (
     <Router>
-
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="successful">Successful</Link>
-            </li>
-            <li>
-              <Link to="unsuccessful">Unsuccessful</Link>
-            </li>
-          </ul>
-        </nav>
-
         <Routes>
           <Route path="/" index element= {<App />} />
-          <Route path="/successful" 
-          element= {handleLogin===true? <Navigate to="/successful" />: <Successful />} />
-          <Route path="/unsuccessful" 
-          element= {handleLogin===false? <Navigate to="/unsuccessful" />: <Unsuccessful />} />
+          <Route path="/successful" element ={<Successful />} />
+          <Route path="/unsuccessful" element ={<Unsuccessful />} />
 
         </Routes>
     </Router>
