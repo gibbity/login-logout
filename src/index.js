@@ -10,7 +10,8 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-
+import { Provider } from 'react-redux';
+import store from "./store";
 
 const Routing = (verified) => {
   return (
@@ -26,9 +27,9 @@ const Routing = (verified) => {
 }
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <Routing />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 

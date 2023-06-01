@@ -1,12 +1,20 @@
-import { createStore } from 'redux';
+import { legacy_createStore as createStore } from 'redux';
 
-const reducer = (state = 0, action) => {
-  console.log('reducer called');
-  return state;
+const initialState = {
+    user: null
 };
+
+const reducer = function(state = initialState, action) {
+    switch (action.type) {
+        case "LOGIN":
+            return {...state, user: action.payload}
+        case "LOGOUT":
+            return {...state, user: null}
+        default:
+            return state;
+        } 
+}
 
 const store = createStore(reducer);
 
-store.subscribe(() => {
-  console.log('current state', store.getState());
-});
+export default store;
