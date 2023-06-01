@@ -1,3 +1,10 @@
+# Welcome to my login-logout app
+
+When using this app, please note that the correct username is “user123” and the correct password is “pass456”.
+
+:)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

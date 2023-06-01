@@ -1,14 +1,35 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Successful from "./pages/Successful";
+import Unsuccessful from "./pages/Unsuccessful";
 import reportWebVitals from './reportWebVitals';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+
+const Routing = (verified) => {
+  return (
+    <Router>
+        <Routes>
+          <Route path="/" index element= {<App />} />
+          <Route path="/successful" element ={<Successful />} />
+          <Route path="/unsuccessful" element ={<Unsuccessful />} />
+
+        </Routes>
+    </Router>
+  );
+}
+
+ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <Routing />
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
